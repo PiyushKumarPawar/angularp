@@ -1,0 +1,309 @@
+p{
+    color: aliceblue;
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  /* General reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Align items to the left and right */
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    position: relative;
+  }
+  
+  /* Soniya Text Positioned to the Top Left */
+  .soniya-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px; /* Adjust font size as needed */
+    color: #fff;
+    position: absolute;
+    top: 15px; /* Adjust top positioning */
+    left: 30px; /* Adjust left positioning */
+  }
+  
+  /* Navbar Links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif; /* Apply stylish font */
+    font-size: 24px; /* Increase font size */
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+  }
+  /* In your component's CSS file (e.g., home.component.css) */
+  /* In your component's CSS file (home.component.css) */
+  
+  /* Position the caption to the left */
+  .carousel-caption {
+    position: absolute;
+    top: 80%; /* Center vertically, you can adjust this */
+    right:auto; /* Adjust left position to make sure it doesn't overlap the video */
+    transform: translateY(-50%); /* Center vertically based on its own height */
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem!important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    display: block; /* Initially show the caption */
+    transition: opacity 0.5s ease; /* Add transition to fade out text */
+  }
+  
+  .video-container {
+    position: relative; /* Needed for absolute positioning of the text */
+  }
+  
+  .nav-links a:hover {
+    color: #f39c12; /* Highlight color on hover */
+  }
+  
+  /* Content Section */
+  h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #2c3e50;
+    margin-top: 50px;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2.5rem; /* Adjust the value to your preference */
+    font-weight: bold; /* Optional: Makes the text bold */
+    color: white; /* Optional: Changes the text color to white (or any other color) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for better visibility */
+  }
+  
+  /* Make sure navbar is responsive */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-left {
+      margin-bottom: 10px;
+    }
+  
+    .nav-links {
+      display: block;
+      text-align: center;
+    }
+  
+    .nav-links li {
+      margin-bottom: 10px;
+    }
+  }
+  
+  
+    /* Styling for video container */
+    .video-container {
+      position: relative;
+      width: 1100px;
+      margin: 10px auto;
+      height: 500px;
+      bottom: 0%;
+    }
+  
+    /* Styling for the video */
+    .video-js {
+      width: 100%;
+      height: 100%;
+    }
+  
+    /* Overlay text style */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      font-family: 'Dancing Script', cursive;
+      z-index: 10;
+      display: block;
+    }
+  
+    /* Play button */
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 20;
+    }
+  
+    /* Play button Hover Effect */
+    .play-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  
+  .carousel-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the screen without distorting */
+  }
+  
+  
+  .carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .carousel-btn {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev-btn {
+    text-align: left;
+    margin-left: 0px;
+  }
+  
+  .next-btn {
+    text-align: right;
+  }
+  /* Cards Layout */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .card p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 10px 10px;
+  }
+  
+  /* Responsive Grid (for smaller screens) */
+  @media (max-width: 768px) {
+    .cards-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cards-container {
+      grid-template-columns: 1fr; /* 1 column on extra small screens */
+    }
+  }
+  
+  .swiper-slide {
+    transition: all 300ms ease-in-out;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .desc {
+    transition: all 300ms ease-in-out;
+    background-color: #181818c4;
+    height: 170px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  .desc:hover {
+    transition: all 300ms ease-in-out;
+  }
+  .desc.tv {
+    height: 60px;
+  }
+  .swiper-slide img {
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px !important;
+    height: 300px !important;
+    object-fit: cover;
+  }
+  .swiper-slide img:active {
+    cursor: grabbing;
+  }
+  .swiper-slide:hover {
+    transform: scale(1.5);
+    transition: all 300ms ease-in-out;
+    transition-delay: 300ms;
+    z-index: 1;
+  }
+  .swiper-slide:hover img {
+    transition-delay: 300ms;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  }
+  @media screen and (max-width: 599px) {
+    .swiper-slide img {
+      max-width: 14rem;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .swiper-slide img {
+      max-width: 10.5rem;
+      border-radius: 2px;
+    }
+  }

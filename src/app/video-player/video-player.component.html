@@ -1,0 +1,25 @@
+<p>{{link}}</p>
+<p>video-player works!</p>
+<div class="video-container">
+    <div class="carousel-slide">
+      <video #videoPlayer id="my-video" class="carousel-video video-js vjs-default-skin" controls preload="auto" width="800" height="450">
+        <source [src]="link" type="video/mp4">
+        <p class="vjs-no-js">To view this video, please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video.</p>
+      </video>
+      <!-- Text Overlay -->
+      <div class="carousel-caption">
+        <h5>{{ videoList[currentIndex].text }}</h5>
+        <p class="description">{{ videoList[currentIndex].description }}</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/7.10.2/video.js"></script>
+  <script>
+    // Initialize Video.js player
+    var player = videojs('my-video', {
+      controls: false,
+      preload: 'auto',
+      width: 800,
+      height: 450
+    });
+    </script>

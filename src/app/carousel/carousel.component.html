@@ -1,0 +1,74 @@
+<nav class="navbar">
+  <div class="logo">
+    <h3>Sony Pictures</h3>
+  </div>
+</nav>
+<div class="top-image-container">
+  <img class="top-image" src="https://via.placeholder.com/1600x856" alt="Top Image">
+  <div class="play-button-container">
+    <a routerLink="/video-player"><button class="play-button">▶ Play</button></a>
+  </div>
+</div>
+
+<p>We think you'll love these</p>
+
+<div class="carousel-container" (scroll)="onScroll($event, 0)">
+  <div class="carousel-items" [style.transform]="'translateX(' + (-carousels[0].currentIndex * carousels[0].itemWidth) + 'px)'">
+    <div *ngFor="let item of items" class="carousel-item">
+      
+      <img [src]="item.imageUrl" [alt]="item.title">
+      
+      <button class="carousel-play-button" (click)="onClick(item.links)">▶</button> <!-- Play button inside each item -->
+    </div>
+  </div>
+
+  <button *ngIf="carousels[0].currentIndex > 0" (click)="scrollLeft(0)" class="arrow-button left">
+    <span>&lt;</span>
+  </button>
+
+  <button *ngIf="carousels[0].currentIndex < items.length - 1" (click)="scrollRight(0)" class="arrow-button right">
+    <span>&gt;</span>
+  </button>
+</div>
+
+<p>Continue Watching</p>
+
+<div class="carousel-container" (scroll)="onScroll($event, 1)">
+  <div class="carousel-items" [style.transform]="'translateX(' + (-carousels[1].currentIndex * carousels[1].itemWidth) + 'px)'">
+    <div *ngFor="let item of items" class="carousel-item">
+      <img [src]="item.imageUrl" [alt]="item.title">
+      <button class="carousel-play-button">▶</button> <!-- Play button inside each item -->
+    </div>
+  </div>
+
+  <button *ngIf="carousels[1].currentIndex > 0" (click)="scrollLeft(1)" class="arrow-button left">
+    <span>&lt;</span>
+  </button>
+
+  <button *ngIf="carousels[1].currentIndex < items.length - 1" (click)="scrollRight(1)" class="arrow-button right">
+    <span>&gt;</span>
+  </button>
+</div>
+
+<p>Our New Releases</p>
+
+<div class="carousel-container" (scroll)="onScroll($event, 2)">
+  <div class="carousel-items" [style.transform]="'translateX(' + (-carousels[2].currentIndex * carousels[2].itemWidth) + 'px)'">
+    <div *ngFor="let item of items" class="carousel-item">
+      <img [src]="item.imageUrl" [alt]="item.title">
+      <button class="carousel-play-button">▶</button> <!-- Play button inside each item -->
+    </div>
+  </div>
+
+  <button *ngIf="carousels[2].currentIndex > 0" (click)="scrollLeft(2)" class="arrow-button left">
+    <span>&lt;</span>
+  </button>
+
+  <button *ngIf="carousels[2].currentIndex < items.length - 1" (click)="scrollRight(2)" class="arrow-button right">
+    <span>&gt;</span>
+  </button>
+</div>
+<footer>
+  <p>&copy; 2024 Your Company. All rights reserved.</p>
+  <p>Contact us at: <a href="mailto:info@yourcompany.com">sonypicturesie.com</a></p>
+</footer>
